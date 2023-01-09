@@ -16,6 +16,15 @@ function RegisterClient (){
     const [search, setSearch] = useState('') //Daniel: variavel para campo de busca de clientes
 
     useEffect(()=>{
+        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        if(!context.auth){
+            if(!token){
+        goToLoginPage(navigate) 
+        }
+         }        
+    },[])
+
+    useEffect(()=>{
         browserClients()
     },[])
 
@@ -53,15 +62,6 @@ function RegisterClient (){
         }
     }
 
-    useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
-        if(!context.auth){
-            if(!token){
-        goToLoginPage(navigate) 
-        }
-         }        
-    },[])
-
     return(
         <>
         
@@ -81,6 +81,7 @@ function RegisterClient (){
             </BoxIntroClient>
 
             <MainShowBoxClient>
+
                 <BoxClient>
                     <div>
                         <span>NOME</span>
@@ -96,8 +97,8 @@ function RegisterClient (){
                         <span onClick={()=>goToDetailsClient(navigate, client.cpf)}>{client.cpf}</span>
                         <span><img src={trash} onClick={()=>deleteClient(client)} alt="Deletar Cliente"/></span>
                     </div>)})}
-
                 </BoxClient>
+
             </MainShowBoxClient>
 
         </MainContainer>

@@ -6,15 +6,10 @@ import { GlobalContext } from "./context/GlobalContext";
 function App() {
 
   const [users, setUsers] = useState([]) //Daniel: variavel para armazenar dados da API RandomUsers
-
   const [loading, setLoading] = useState(false) //Daniel: variavel para armazenar status de loading
-
   const [showModal, setShowModal] = useState(false) //Daniel: variavel para ativar os modais
-
   const [action, setAction] = useState('') //Daniel: variavel para definir o tipo de modal
-
   const [clients, setClients] = useState([]) //Daniel: variavel para armazenar dados da APi de Clientes Locais
-
   const [auth, setAuth] = useState(false) //Daniel: variavel para manter o usuário conectado a aplicação
 
   const context = {
@@ -30,7 +25,6 @@ function App() {
     setClients,
     auth,setAuth,
   }
-
 
   return (
     <>

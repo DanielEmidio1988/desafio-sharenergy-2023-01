@@ -64,12 +64,10 @@ function HomePage (){
 
     //Daniel: função para busca de usuários da Api Random Users
     const browserUsers = async()=>{
-
         //Daniel: caso exista usuários na base, a função será encerrada
         if(context.users.length > 1){
             return
-        }
-        
+        }       
         try{
             context.setLoading(true)
             const response = await axios.get(`${RandomUser_Url}/?results=500`)
@@ -85,10 +83,6 @@ function HomePage (){
         }
     }
 
-    const onChangeSearch = (event)=>{
-        setSearch(event.target.value)
-    }
-
     return(
         <>
         <Header/>
@@ -96,7 +90,7 @@ function HomePage (){
         <MainContainer>
 
             <InputSearch>
-                <input value={search} onChange={onChangeSearch}placeholder="Pesquisar usuário"/>
+                <input value={search} onChange={(event)=>setSearch(event.target.value)}placeholder="Pesquisar usuário"/>
                 <p>Total de Usuários: {numberCard}</p>             
             </InputSearch>
             

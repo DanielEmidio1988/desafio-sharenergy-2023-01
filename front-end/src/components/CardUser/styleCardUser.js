@@ -31,8 +31,7 @@ export const MainCard = styled.div`
         
         p{
             font-size: 12px;
-            transition: transform .3s;
-            
+            transition: transform .3s;          
         }
 
         p:hover{

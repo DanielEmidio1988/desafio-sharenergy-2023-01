@@ -18,7 +18,6 @@ function Router() {
                     <Route path="/main/randomdog" element={<RandomDog/>}/>
                     <Route path="/main/cadastro_cliente" element={<RegisterClient/>}/>
                     <Route path="/main/cadastro_cliente/:id" element={<DetailsClient/>}/>
-                    {/* <Route path="/*" element={<LoginPage/>}/> */}
                 </Routes>
             </BrowserRouter>   
         );

@@ -6,6 +6,7 @@ function CardUser(props){
         <>
         
         <MainCard>
+            
             <div>
                 <img src={props.user.picture.large} alt="foto-usuario"/>
                 <h2>{props.user.name.first + " " + props.user.name.last}</h2>
@@ -14,7 +15,6 @@ function CardUser(props){
             <div>
             <p>E-mail: {props.user.email}</p>
             <p>Idade: {props.user.dob.age}</p>
-
             </div>
 
         </MainCard>

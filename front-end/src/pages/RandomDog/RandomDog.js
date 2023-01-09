@@ -14,6 +14,14 @@ function RandomDog (){
     const context = useContext(GlobalContext)
     const navigate = useNavigate()
 
+    useEffect(()=>{
+        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        if(!context.auth){
+            if(!token){
+        goToLoginPage(navigate) 
+        }
+         }        
+    },[])
 
     useEffect(()=>{
         browserDog()
@@ -35,19 +43,11 @@ function RandomDog (){
         }
     }
 
-    useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
-        if(!context.auth){
-            if(!token){
-        goToLoginPage(navigate) 
-        }
-         }        
-    },[])
-
     return(
         <>
         <Header/>
         <MainContainer>
+
             <BoxIntro>
                 <div>
                     <img src={dog} alt="icone-cachorro"/>
@@ -56,19 +56,18 @@ function RandomDog (){
                     Clique no botão abaixo para atualizar o Card de Cachorrinhos.
                 </div>               
             </BoxIntro>
+
             <div>
                 {context.Loading ? 'Carregando' : <Button onClick={()=>browserDog()}>Atualizar</Button>}
             </div>
-            <MainShowCard>
 
+            <MainShowCard>
                 <CardPet>
                     {context.Loading ? <img src={`https://random.dog/${dogloading}`} alt="random-dog"/> : <img src={`https://random.dog/${randomDog}`} alt="random-dog"/>}
                 </CardPet>
-
             </MainShowCard>
 
         </MainContainer>
-
         </>
     )
 }

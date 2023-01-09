@@ -15,6 +15,7 @@ function NewClient(props){
         cpf:"",
         }
     ) //Daniel: variavel auxiliar para carregar as informações de cliente
+    const [validatePass, setValidatePass] = useState(false) //Daniel: variavel para ativar mensagem de Cadastro não preenchido
 
     const onChangeForm = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -29,6 +30,11 @@ function NewClient(props){
         adress: form.adress,
         phone: form.phone,
         cpf: Number(form.cpf),
+        }
+
+        if(form.name === '' || form.email === '' || form.adress === '' || form.phone === '' || form.cpf === ''){
+            setValidatePass(true)
+            return
         }
 
         try{
@@ -72,6 +78,9 @@ function NewClient(props){
             <div>
                 <p>CPF</p>
                 <input value={form.cpf} name="cpf" onChange={onChangeForm}/>
+            </div>
+            <div>
+            {validatePass ? <p className='errorRegister'>Preencher todos os campos!</p> : ''}
             </div>
             <div>
                 <button onClick={()=>createNewClient()} className="RegisterButton">Cadastrar</button>

@@ -14,21 +14,6 @@ function HTTPCat (){
     const navigate = useNavigate()
     const context = useContext(GlobalContext)
 
-    const browserCat = async (statusHttp)=>{
-        try{
-
-            await fetch(`https://http.cat/${statusHttp}`, {
-                method: 'GET',
-                mode: 'no-cors',
-              });
-            setSearch(statusHttp)
-            
-
-        }catch(error){
-            console.log(error)
-        }
-    }
-
     useEffect(()=>{
         const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
         if(!context.auth){
@@ -38,11 +23,24 @@ function HTTPCat (){
          }        
     },[])
 
+    //Daniel: callback para busca da imagem de gatos
+    const browserCat = async (statusHttp)=>{
+        try{
+            await fetch(`https://http.cat/${statusHttp}`, {
+                method: 'GET',
+                mode: 'no-cors',
+              });
+            setSearch(statusHttp)         
+        }catch(error){
+            console.log(error)
+        }
+    }
 
     return(
         <>
         <Header/>
         <MainContainer>
+
             <BoxIntro>
                 <div>
                     <img src={cat} alt="icone-gato"/>
@@ -58,12 +56,9 @@ function HTTPCat (){
             </InputSearch>
 
             <MainShowCard>
-
-                        <CardPet>
-                            {search === '' ? <img src={notfound} alt="Status Quote Cats"/> : <img src={`https://http.cat/${search}`} alt="Status Quote Cats"/>}
-                          
-                        </CardPet>
-
+                <CardPet>
+                    {search === '' ? <img src={notfound} alt="Status Quote Cats"/> : <img src={`https://http.cat/${search}`} alt="Status Quote Cats"/>}                        
+                </CardPet>
             </MainShowCard>
 
         </MainContainer>

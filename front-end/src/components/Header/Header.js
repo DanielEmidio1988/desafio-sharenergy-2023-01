@@ -1,9 +1,9 @@
-import {ContainerHeader, MainMenu, MainTitle} from "./styleHeader"
-import { useNavigate } from "react-router-dom"
-import { goToHomePage, goToHTTPCatPage, goToRandomDog, goToRegisterClient, goToLoginPage } from "../../routes/coordinator"
-import logo from "../../assets/img/icon-daniel.png"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import {ContainerHeader, MainMenu, MainTitle} from "./styleHeader"
+import { goToHomePage, goToHTTPCatPage, goToRandomDog, goToRegisterClient, goToLoginPage } from "../../routes/coordinator"
 import { GlobalContext } from "../../context/GlobalContext"
+import logo from "../../assets/img/icon-daniel.png"
 
 function Header(){
 
@@ -15,8 +15,6 @@ function Header(){
         localStorage.clear() 
         goToLoginPage(navigate)      
     }
-
-
 
     return(
         <ContainerHeader>
