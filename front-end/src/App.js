@@ -26,6 +26,7 @@ function App() {
     auth,setAuth,
   }
 
+  
   return (
     <>
       <GlobalStyled/>

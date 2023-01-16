@@ -15,7 +15,7 @@ function RandomDog (){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(!context.auth){
             if(!token){
         goToLoginPage(navigate) 

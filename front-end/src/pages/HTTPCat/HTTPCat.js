@@ -15,7 +15,7 @@ function HTTPCat (){
     const context = useContext(GlobalContext)
 
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(!context.auth){
             if(!token){
         goToLoginPage(navigate) 

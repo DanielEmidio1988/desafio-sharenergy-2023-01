@@ -16,7 +16,7 @@ function RegisterClient (){
     const [search, setSearch] = useState('') //Daniel: variavel para campo de busca de clientes
 
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(!context.auth){
             if(!token){
         goToLoginPage(navigate) 

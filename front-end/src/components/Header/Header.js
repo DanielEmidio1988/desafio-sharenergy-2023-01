@@ -36,7 +36,7 @@ function Header(){
         </MainMenu>
 
         <MainTitle>
-            <h1>DESAFIO RANDOM<span>APP</span></h1>
+            <h1>RANDOM<span>API</span></h1>
         </MainTitle>
 
         </ContainerHeader>

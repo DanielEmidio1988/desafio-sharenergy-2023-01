@@ -19,10 +19,10 @@ function LoginPage (){
 
     //Daniel: callback para ativar o login
     const login = ()=>{
-        if(form.login === 'desafiosharenergy' && form.password === 'sh@r3n3rgy'){        
+        if(form.login === 'admin' && form.password === 'ADMIN123'){        
             if(checkBox){
-            const tokenSharenergy = JSON.stringify(form)
-            window.localStorage.setItem("tokenSharenergy", tokenSharenergy)
+            const tokenrandomapi = JSON.stringify(form)
+            window.localStorage.setItem("tokenrandomapi", tokenrandomapi)
             setCheckBox(false)
             }
             setValidatePass(false)
@@ -44,7 +44,7 @@ function LoginPage (){
 
     //Daniel: este hook fará com que o usuário seja redirecionado a Home Page caso tenha ativado "lembre-me" quando logou
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(token){
         goToHomePage(navigate) 
          }        
