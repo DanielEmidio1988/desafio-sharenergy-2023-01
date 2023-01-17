@@ -77,9 +77,9 @@ function DetailsClient(){
         <>
         <Header/>
         <MainContainer>
+            
             <div>
-                <h3>Cadastro de Cliente</h3>
-                
+                <h3>Cadastro de Cliente</h3>          
             </div>
 
                             <TokenRegister>
@@ -106,10 +106,8 @@ function DetailsClient(){
                             </TokenRegister>
 
             <BoxPageDetails>
-
                 <button  onClick={()=>updateClientToken(form)}>Atualiza Cliente</button>
                 <button  onClick={()=>goToRegisterClient(navigate)}>Cancelar</button>
-
             </BoxPageDetails>
 
         </MainContainer>

@@ -13,17 +13,16 @@ function LoginPage (){
     const [form, setForm] = useState({
         login: "",
         password: "",
-    }) //Daniel: variavel para armazenar dados de login e senha
+    }) //Daniel: formulário para armazenar dados de login e senha
     const [validatePass, setValidatePass] = useState(false) //Daniel: variavel para ativar mensagem de login/senha incorretos
     const [checkBox, setCheckBox] = useState(false) //Daniel: variavel para ativar o checkbox de Lembre-me.
 
     //Daniel: callback para ativar o login
     const login = ()=>{
-        if(form.login === 'desafiosharenergy' && form.password === 'sh@r3n3rgy'){
-            
+        if(form.login === 'admin' && form.password === 'ADMIN123'){        
             if(checkBox){
-            const tokenSharenergy = JSON.stringify(form)
-            window.localStorage.setItem("tokenSharenergy", tokenSharenergy)
+            const tokenrandomapi = JSON.stringify(form)
+            window.localStorage.setItem("tokenrandomapi", tokenrandomapi)
             setCheckBox(false)
             }
             setValidatePass(false)
@@ -31,8 +30,7 @@ function LoginPage (){
             goToHomePage(navigate)
         }else{
             setValidatePass(true)
-        }
-        
+        }      
     }
     
     const onChangeCheckBox = (event)=>{
@@ -46,7 +44,7 @@ function LoginPage (){
 
     //Daniel: este hook fará com que o usuário seja redirecionado a Home Page caso tenha ativado "lembre-me" quando logou
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(token){
         goToHomePage(navigate) 
          }        
@@ -65,7 +63,6 @@ function LoginPage (){
                 </div>
 
                 <div>
-
                         <input value={form.login} name="login" onChange={onChangeForm} placeholder="Insira seu e-mail"/>
                         <input value={form.password} name="password" onChange={onChangeForm} type='password' placeholder="Insira sua senha"/>
                         {validatePass ? <p className='errorLogin'>E-mail ou senha incorreto!</p> : ''}
@@ -74,8 +71,7 @@ function LoginPage (){
                         <div className="rememberme">
                             <input type="checkbox" name="rememberme" value={checkBox} onChange={onChangeCheckBox}/>
                             <label for="rememberme">Lembre-me!</label>
-                        </div>
-  
+                        </div> 
                 </div>
             </BoxLogin>
         </MainContainer>

@@ -46,7 +46,7 @@ function HomePage (){
             setPageNumber(Number(params.results))
         }
     },[])
-
+    console.log('params', params)
     useEffect(()=>{
         browserUsers()
     },[pageNumber])
@@ -54,7 +54,7 @@ function HomePage (){
     //Daniel: este hook verificará o localStorage, caso não tenha nenhuma informação armazenada de login de usuário, ele retorna a página de login
     //Será utilizado em todas as páginas
     useEffect(()=>{
-        const token = JSON.parse(window.localStorage.getItem("tokenSharenergy")) 
+        const token = JSON.parse(window.localStorage.getItem("tokenrandomapi")) 
         if(!context.auth){
             if(!token){
         goToLoginPage(navigate) 
@@ -64,15 +64,13 @@ function HomePage (){
 
     //Daniel: função para busca de usuários da Api Random Users
     const browserUsers = async()=>{
-
         //Daniel: caso exista usuários na base, a função será encerrada
         if(context.users.length > 1){
             return
-        }
-        
+        }       
         try{
             context.setLoading(true)
-            const response = await axios.get(`${RandomUser_Url}/?results=500`)
+            const response = await axios.get(`${RandomUser_Url}/?results=5000`)
             const auxUser = [...response.data.results]
             setLastPage(Math.ceil(response.data.info.results / perPage))
             setNumberCard(response.data.info.results)
@@ -85,10 +83,6 @@ function HomePage (){
         }
     }
 
-    const onChangeSearch = (event)=>{
-        setSearch(event.target.value)
-    }
-
     return(
         <>
         <Header/>
@@ -96,7 +90,7 @@ function HomePage (){
         <MainContainer>
 
             <InputSearch>
-                <input value={search} onChange={onChangeSearch}placeholder="Pesquisar usuário"/>
+                <input value={search} onChange={(event)=>setSearch(event.target.value)}placeholder="Pesquisar usuário"/>
                 <p>Total de Usuários: {numberCard}</p>             
             </InputSearch>
             

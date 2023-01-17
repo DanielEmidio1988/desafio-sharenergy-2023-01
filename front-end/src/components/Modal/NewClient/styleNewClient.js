@@ -11,19 +11,23 @@ export const MainModal = styled.div`
     left: 30%;
     padding: 8px;
 
-
     div{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        
+     
     h3{
         margin-bottom: 12px;
     }
     p{
         font-size: 12px;
+    }
+
+    .errorRegister{
+        color: red;
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     input{

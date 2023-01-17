@@ -33,9 +33,7 @@ export const BoxLogin = styled.div`
         flex-direction: column;
         height: 40%;
     }
-
-
-    
+   
     div:last-child{
         display: flex;
         justify-content: flex-start;
@@ -64,7 +62,6 @@ export const BoxLogin = styled.div`
         input:hover{
             cursor: pointer;
             border-bottom: 2px solid #F06091;
-
         }
 
         input:focus{
@@ -86,5 +83,4 @@ export const BoxLogin = styled.div`
             cursor: pointer;
             background-color: #BB2649;
         }
-
     }`

@@ -36,7 +36,6 @@ export const InputSearch = styled.div`
     input:hover{
         width: 50%;
         cursor: pointer;
-
     }
 
     input:focus{
@@ -70,8 +69,7 @@ export const TokenRegister = styled.div`
         
             input:hover{
                 width: 50%;
-                cursor: pointer;
-        
+                cursor: pointer;      
             }
         
             input:focus{
@@ -126,8 +124,7 @@ export const BoxIntroClient = styled.div`
         
             input:hover{
                 width: 50%;
-                cursor: pointer;
-        
+                cursor: pointer;     
             }
         
             input:focus{
@@ -199,6 +196,7 @@ export const MainShowCard = styled.div`
     gap: 2vw;
     `
 
+//Daniel: Estilização botões de página da RandomUser
 export const Button = styled.button`   
         color: #fff;
         border-radius: 20px;
@@ -275,7 +273,6 @@ export const BoxPage = styled.div`
         border: none;
         margin: 20px 0 20px 0;
     }
-
 
     button:hover{
         cursor: pointer;

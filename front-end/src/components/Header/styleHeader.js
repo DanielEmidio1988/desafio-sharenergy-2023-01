@@ -9,19 +9,16 @@ export const ContainerHeader = styled.div`
 
 export const MainMenu = styled.div`
     display: flex;
+    justify-content: space-between;
     height: 30%;
     padding-top: 2vh;
     
     div:first-child{
-        width: 40%;
         padding-left: 4vw;
-
     }
     
     div:last-child{
-        width:60%;
         
-
         span{
             height: 100%;
             padding-right: 2vw;
@@ -38,7 +35,17 @@ export const MainMenu = styled.div`
         border-radius: 50%;
         width: 50px;
     }
-    
+
+    @media screen and (max-device-width: 700px){
+        span{
+            font-size: 12px;
+        }
+
+        img{
+            width: 40px;
+        }
+    }
+
     `
 
 export const MainTitle = styled.div`
